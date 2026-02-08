@@ -18,3 +18,10 @@
     src: index.html.j2
     dest: /var/www/html/index.html
 
+- name: stop and disable nginx
+  service:
+    name: nginx
+    state: stopped   # Arrête le service immédiatement
+    enabled: no      # Empêche le démarrage automatique au prochain boot
+  become: yes
+
